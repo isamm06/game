@@ -12,8 +12,8 @@ let movimientos = 0;
 let aciertos = 0;
 
 let temporizador= false;
-let timer=120;  
-let timerInicial=120;
+let timer=60;  
+let timerInicial=60;
 let cuentaRegresivaId=null;                      
 
 
@@ -25,7 +25,7 @@ let mostrarTiempo= document.getElementById(`t-restante`);
 
 //numeros aleatorios
 
-let numeros = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12];
+let numeros = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15]; // arreglo o array
 numeros = numeros.sort (()=>{return Math.random()-0.5});
 console.log(numeros);
 
@@ -42,7 +42,7 @@ function contarTiempo(){
 }
 
 function bloquearTarjetas(){
-    for (let i=0; i<=23; i++){
+    for (let i=0; i<=30; i++){
         let tarjetaBloqueada=document.getElementById(i);
         tarjetaBloqueada.innerHTML= numeros[i];
         tarjetaBloqueada.disabled=true;
@@ -87,7 +87,7 @@ function destapar(id) {
             aciertos++;
             mostrarAciertos.innerHTML=`Aciertos: ${aciertos}`;
 
-            if(aciertos==12){
+            if(aciertos==15){
             clearInterval(cuentaRegresivaId);
             mostrarAciertos.innerHTML=`Aciertos: ${aciertos}🔥`;
             mostrarTiempo.innerHTML= `Fantastico! Solo demoraste ${timerInicial-timer} segundos👏`
