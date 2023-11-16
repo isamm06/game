@@ -12,9 +12,14 @@ let movimientos = 0;
 let aciertos = 0;
 
 let temporizador= false;
-let timer=60;  
-let timerInicial=60;
-let cuentaRegresivaId=null;                      
+let timer=80;  
+let timerInicial=80;
+let cuentaRegresivaId=null;        
+
+let audioClick = document.getElementById("click");
+let audioBien = document.getElementById("bien");
+let audioPerder = document.getElementById("perder");
+let audioGanar = document.getElementById("ganar");
 
 
 //html
@@ -35,6 +40,7 @@ function contarTiempo(){
         timer--;
         mostrarTiempo.innerHTML=`Tiempo: ${timer} segundos`;
         if (timer==0){
+            audioPerder.play();
             clearInterval(cuentaRegresivaId);
             bloquearTarjetas();
         }
@@ -56,6 +62,8 @@ function destapar(id) {
         contarTiempo();
         temporizador=true;
     }
+
+    audioClick.play();
 
     tarjetasDestapadas ++;
     console.log(tarjetasDestapadas);
@@ -81,6 +89,7 @@ function destapar(id) {
         mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} `;
 
         if(primerResultado==segundoResultado){
+            audioBien.play();
             //contador tarjetas destapadas
             tarjetasDestapadas=0;
             //aumento de aciertos
@@ -88,6 +97,7 @@ function destapar(id) {
             mostrarAciertos.innerHTML=`Aciertos: ${aciertos}`;
 
             if(aciertos==15){
+             audioGanar.play();
             clearInterval(cuentaRegresivaId);
             mostrarAciertos.innerHTML=`Aciertos: ${aciertos}🔥`;
             mostrarTiempo.innerHTML= `Fantastico! Solo demoraste ${timerInicial-timer} segundos👏`

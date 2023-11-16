@@ -25,9 +25,10 @@ button{
     font-size: 40px;
     color: black;
     font-weight: bold;
+    background-color: rgb(241, 206, 241);
 }
 
-butto:hover{
+button:hover{
     cursor: pointer;
 }
 
@@ -54,14 +55,23 @@ footer{
 
 a{
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 10px;
     font-size: 25px;
     font-weight: 100px;
+}
+a{
+    background: rgb(235, 195, 241);
+    padding: 10px 10px 10px 10px;
+    border-radius: 100px;
 }
 
 p{
     color: black;
     font-family: sans-serif;
+}
+
+h3{
+    color: black;
 }
 

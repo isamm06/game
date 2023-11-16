@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nivel Facil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="facil.css">
 </head>
 <body>
 
@@ -63,10 +63,25 @@
             <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
         </section>
     </main>
+
+    <audio id="click">
+        <source src="sounds/click.wav" type="audio/mp3">
+    </audio>
+    <audio id="bien">
+        <source src="sounds/bien.mp3" type="audio/mp3">
+    </audio>
+    <audio id="perder">
+        <source src="sounds/perder.mp3" type="audio/mp3">
+    </audio>
+    <audio id="ganar">
+        <source src="sounds/ganar.mp3" type="audio/mp3">
+    </audio>
+
     <footer>
+        <a href="facil.html">Reiniciar</a>
         <h3>Estas en el nivel Facil ¿Deseas probar otra dificultad?</h3>
-        <a href="index.html"> -Nivel Medio- </a>
-        <a href=""> -Nivel Dificil- </a> <br>
+        <a href="medio.html"> -Nivel Medio- </a>
+        <a href="dificil.html"> -Nivel Dificil- </a> <br>
         <p>Juego de Memoria Programado por  👉Isabella San Martin </p>
     </footer>
     <script src="facil.js"></script>
